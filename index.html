@@ -903,6 +903,100 @@
 .skill-body {
   overflow: visible !important;
 }
+    /* Финальное переопределение карточек навыков — вставить в самый конец CSS */
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  grid-auto-rows: auto !important;
+}
+
+.skill-card,
+.skills-grid > .skill-card {
+  display: block !important;
+  height: auto !important;
+  min-height: 240px !important;
+  overflow: visible !important;
+}
+
+.skill-card summary {
+  min-height: 240px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  overflow: visible !important;
+}
+
+.skill-card[open],
+.skills-grid > .skill-card[open] {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.skill-card[open] summary {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.skill-body {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 18px 22px 22px !important;
+  border-top: 1px solid rgba(210, 221, 215, .7) !important;
+  background: rgba(255, 253, 248, .46) !important;
+}
+
+/* Телефон и планшет: карточки в один столбец и раскрываются полностью */
+@media (max-width: 960px) {
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    align-items: stretch !important;
+  }
+
+  .skill-card,
+  .skills-grid > .skill-card,
+  .skill-card summary,
+  .skill-card[open],
+  .skill-card[open] summary {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .skill-card {
+    margin-bottom: 16px !important;
+  }
+
+  .skill-card summary {
+    padding: 22px !important;
+  }
+
+  .skill-body {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
   </style>
 </head>
 
