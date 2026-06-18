@@ -579,11 +579,12 @@
       margin-top: 7px;
     }
 
+    /* Исправленный блок навыков: карточки одинаковой высоты */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .skill-card {
@@ -593,6 +594,9 @@
       box-shadow: 0 14px 40px rgba(38, 66, 58, .08);
       overflow: hidden;
       min-height: 220px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .skill-card summary {
@@ -600,6 +604,7 @@
       cursor: pointer;
       padding: 22px;
       min-height: 220px;
+      height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -607,6 +612,15 @@
 
     .skill-card summary::-webkit-details-marker {
       display: none;
+    }
+
+    .skill-card[open] {
+      min-height: 430px;
+    }
+
+    .skill-card[open] .skill-body {
+      min-height: 190px;
+      align-content: flex-start;
     }
 
     .skill-top {
