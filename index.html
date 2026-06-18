@@ -579,100 +579,98 @@
       margin-top: 7px;
     }
 
-    /* Исправленный блок навыков: карточки одинаковой высоты */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      align-items: stretch;
-    }
+    
+      /* Блок навыков: карточки ровные, но без обрезания текста */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
 
-    .skill-card {
-      border: 1px solid rgba(210, 221, 215, .78);
-      border-radius: 24px;
-      background: var(--paper);
-      box-shadow: 0 14px 40px rgba(38, 66, 58, .08);
-      overflow: hidden;
-      min-height: 220px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+.skill-card {
+  border: 1px solid rgba(210, 221, 215, .78);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 14px 40px rgba(38, 66, 58, .08);
+  overflow: hidden;
+  min-height: 240px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-    .skill-card summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 22px;
-      min-height: 220px;
-      height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.skill-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px;
+  min-height: 240px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
 
-    .skill-card summary::-webkit-details-marker {
-      display: none;
-    }
+.skill-card summary::-webkit-details-marker {
+  display: none;
+}
 
-    .skill-card[open] {
-      min-height: 430px;
-    }
+.skill-card[open] {
+  height: auto;
+  min-height: 430px;
+}
 
-    .skill-card[open] .skill-body {
-      min-height: 190px;
-      align-content: flex-start;
-    }
+.skill-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
 
-    .skill-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
+.skill-card h3 {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 21px;
+  line-height: 1.18;
+}
 
-    .skill-card h3 {
-      margin: 0 0 8px;
-      color: var(--accent-dark);
-      font-size: 21px;
-      line-height: 1.18;
-    }
+.hint {
+  margin: 0;
+  color: var(--muted);
+}
 
-    .hint {
-      margin: 0;
-      color: var(--muted);
-    }
+.open-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(85, 121, 109, .12);
+  color: var(--accent-dark);
+  font-size: 24px;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
 
-    .open-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: rgba(85, 121, 109, .12);
-      color: var(--accent-dark);
-      font-size: 24px;
-      font-weight: 600;
-      transition: transform .2s ease;
-    }
+.skill-card[open] .open-mark {
+  transform: rotate(45deg);
+}
 
-    .skill-card[open] .open-mark {
-      transform: rotate(45deg);
-    }
+.preview-chips,
+.skill-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-    .preview-chips,
-    .skill-body {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-body {
-      padding: 0 22px 22px;
-      border-top: 1px solid rgba(210, 221, 215, .7);
-      padding-top: 18px;
-      background: rgba(255, 253, 248, .46);
-    }
+.skill-body {
+  padding: 18px 22px 22px;
+  border-top: 1px solid rgba(210, 221, 215, .7);
+  background: rgba(255, 253, 248, .46);
+  align-content: flex-start;
+}
 
     .education-stack {
       display: grid;
@@ -1330,7 +1328,7 @@
             <summary>
               <div class="skill-top">
                 <div>
-                  <h3>Рабочий стиль и soft skills</h3>
+                  <h3>Рабочий стиль</h3>
                   <p class="hint">Как организована работа с клиентом, группой и профессиональной средой.</p>
                 </div>
                 <span class="open-mark">+</span>
