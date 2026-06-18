@@ -867,6 +867,42 @@
         grid-template-columns: 1fr;
       }
     }
+    /* Финальный фикс карточек навыков */
+.skills-grid {
+  align-items: stretch !important;
+  grid-auto-rows: 1fr !important;
+}
+
+.skills-grid > .skill-card {
+  height: 100% !important;
+  min-height: 260px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.skill-card summary {
+  min-height: 260px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  overflow: visible !important;
+}
+
+.skill-card[open] summary {
+  height: auto !important;
+  min-height: 260px !important;
+}
+
+.skill-card[open] {
+  height: auto !important;
+  min-height: 430px !important;
+}
+
+.skill-body {
+  overflow: visible !important;
+}
   </style>
 </head>
 
